@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="centeredDiv">
+        <h1 class="title">MACEDONIAN PERSONAL NUMBER VALIDITY CHECKER</h1>
+    <div class="input-container">
+    <label for="numberInput" class="label">Enter a Number:</label>
+    <input id="numberInput" class="inputHere" maxlength="13" oninput="updateCharCount()">
+    <div class="char-counter"><span id="charCount">0</span> / 13</div>
+    <script>
+            function updateCharCount(){
+            const input1 = document.getElementById('numberInput').value;
+            const charCountSpan = document.getElementById('charCount');
+            const charLimit = 13;
+
+            
+            const currentLength = input1.length;
+            charCountSpan.textContent = currentLength;
+
+            if (currentLength > charLimit) {
+                charCountSpan.classList.add('char-limit');
+            } else {
+                charCountSpan.classList.remove('char-limit');
+            }
+        }
+    </script>  
+    </div>
+    <button class="submit" id="submit">SUBMIT</button>
+    <h3 id="errorMessage" style="color: red; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" class="message"></h3>
+    <h3 class="message" id="name"> </h3>
+    <h3 class="message" id="age"> </h3>
+    <h3 class="message" id="birthday"> </h3>
+    <h3 class="message" id="region"> </h3>
+    <h3 class="message" id="gender"> </h3>
+    <h3 class="message" id="validity" style="color: green;"></h3>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
